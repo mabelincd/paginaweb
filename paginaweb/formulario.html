@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Formulario de Ingreso</title>
+</head>
+<body>
+    <h1>Formulario de Ingreso</h1>
+    <form id="loginForm">
+        <label for="usuario">Usuario:</label>
+        <input type="text" id="usuario" name="usuario" required><br><br>
+
+        <label for="contrasena">Contraseña:</label>
+        <input type="password" id="contrasena" name="contrasena" required><br><br>
+
+        <input type="submit" value="Ingresar">
+    </form>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function (event) {
+            event.preventDefault(); // Evita que se envíe el formulario de manera predeterminada
+
+            // Obtén los valores ingresados por el usuario
+            var usuario = document.getElementById("usuario").value;
+            var contrasena = document.getElementById("contrasena").value;
+
+            // Comprueba si la contraseña coincide con "SENA"
+            if (contrasena === "SENA") {
+                // Redirige al usuario a otra página si la contraseña coincide
+                window.location.href = "formu.html";
+            } else {
+                // Muestra una alerta si la contraseña no coincide
+                alert("La contraseña no coincide. Inténtalo de nuevo.");
+            }
+        });
+    </script>
+</body>
+</html>
